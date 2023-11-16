@@ -46,7 +46,7 @@ if __name__ == '__main__':
     parser.add_argument('--save-txt', action='store_true', help='save results to *.txt')
     parser.add_argument('--save-conf', action='store_true', help='save confidences in --save-txt labels')
     parser.add_argument('--save-csv', action='store_true', help='save results in CSV format')
-    #parser.add_argument('--nosave', action='store_true', help='do not save images/videos')
+    parser.add_argument('--nosave', action='store_true', help='do not save images/videos')
     parser.add_argument('--classes', nargs='+', type=int, help='filter by class: --class 0, or --class 0 2 3')
     parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
     parser.add_argument('--augment', action='store_true', help='augmented inference')
@@ -85,9 +85,9 @@ if __name__ == '__main__':
                 st.sidebar.video(uploaded_file)
                 with open(os.path.join("data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
-                #opt.source = f'data/videos/{uploaded_file.name}'
-                link = os.path.join('data/', uploaded_file.name)
-                opt.source = link
+                opt.source = f'data/{uploaded_file.name}'
+                #link = os.path.join('data/', uploaded_file.name)
+                #opt.source = link
         else:
             is_valid = False
 
