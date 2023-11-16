@@ -127,13 +127,13 @@ def videoInput(model, src):
 
 
 def main():
-    if CFG_ENABLE_URL_DOWNLOAD:
-        downloadModel()
+    # if CFG_ENABLE_URL_DOWNLOAD:
+    #     downloadModel()
         
-    else:
-        if not os.path.exists(CFG_MODEL_PATH):
-            st.error(
-                'Model not found, please config if you wish to download model from url set `cfg_enable_url_download = True`  ', icon="⚠️")
+    # else:
+    #     if not os.path.exists(CFG_MODEL_PATH):
+    #         st.error(
+    #             'Model not found, please config if you wish to download model from url set `cfg_enable_url_download = True`  ', icon="⚠️")
 
     # -- Sidebar
     st.sidebar.title('⚙️ Options')
