@@ -5,7 +5,7 @@ from io import *
 import glob
 from datetime import datetime
 import os
-
+import wget
 
 # Configurations
 CFG_MODEL_PATH = "models/AI-POC-eDrug-Formulary-v0.0.1.pt"
@@ -14,7 +14,6 @@ CFG_MODEL_PATH = "models/AI-POC-eDrug-Formulary-v0.0.1.pt"
     # Configure this if you set cfg_enable_url_download to True
 #    url = "https://archive.org/download/yoloTrained/yoloTrained.pt"
 # End of Configurations
-
 
 def imageInput(model, src):
 
