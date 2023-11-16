@@ -70,8 +70,10 @@ if __name__ == '__main__':
             with st.spinner(text='Loading...'):
                 st.sidebar.image(uploaded_file)
                 picture = Image.open(uploaded_file)
-                picture = picture.save(f'data/images/{uploaded_file.name}')
-                opt.source = f'data/images/{uploaded_file.name}'
+                #picture = picture.save(f'data/images/{uploaded_file.name}')
+                #opt.source = f'data/images/{uploaded_file.name}'
+                picture = picture.save(f'data/image/'+ uploaded_file.name)
+                opt.source = f'data/images/'+ uploaded_file.name
         else:
             is_valid = False
     else:
@@ -82,7 +84,8 @@ if __name__ == '__main__':
                 st.sidebar.video(uploaded_file)
                 with open(os.path.join("data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
-                opt.source = f'data/videos/{uploaded_file.name}'
+                #opt.source = f'data/videos/{uploaded_file.name}'
+                opt.source = f'data/videos/'+ uploaded_file.name
         else:
             is_valid = False
 
