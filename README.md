@@ -1,74 +1,32 @@
+# yolov5-streamlit
 
-# 🚀 YOLOv5 Streamlit Deployment
-[![HitCount](https://hits.dwyl.com/thepbordin/YOLOv5-Streamlit-Deployment.svg?style=flat&show=unique)](http://hits.dwyl.com/thepbordin/YOLOv5-Streamlit-Deployment)
+Deploy [YOLOv5](https://github.com/ultralytics/yolov5/releases/tag/v5.0) detection with [Streamlit](https://github.com/streamlit/streamlit)
 
+博文地址： <https://xugaoxiang.com/2021/08/27/yolov5-streamlit/>
 
-A Easy way to deploy [YOLOv5](https://github.com/ultralytics/yolov5) object detection model with [Streamlit](https://streamlit.io/). 
+# 线上体验
 
-**Please feel free to use/edit.** 
+直接访问 <https://share.streamlit.io/xugaoxiang/yolov5-streamlit/main/main.py>
 
+# 安装依赖
 
-code modified by GitHub/thepbordin from GitHub/zhoroh
-
-## ✨ Features
-
-- YOLO Weights Source
-	-  Load from Local
-	- Download Weights from URL
-- Example Dataset 
-  - Videos
-  -	 Images
- - Upload Data 
-   - Video
-   - Image
-- Select computing device (cuda/cpu)
-
-
-
-## ⚙️ Installation
-
-
-
-### Local Use
-1. Install Requirements 
-	`pip install -r requirements.txt`
-2. Install ffmpeg (for video inferencing)
-	- For Windows [read here](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/)
-	- For Mac (brew)
-		`brew install ffmpeg`
-3. Strart Stremlit
-	```
-	cd YOLOv5-Streamlit-Deployment
-    streamlit run app.py
-    ```
-### Streamlit Cloud
-1. Edit a configuration in app.py (read ⚙️ Config Instruction)
-2. (Optional) Upload example datas in
-	- `example_images`
-	- `example_videos`
-4. Deploy on [Streamlit](https://share.streamlit.io/deploy)
-
-
-## ⚙️ Config Instruction
-### Download model from URL
-
-1. Upload model to [Internet Archive](https://archive.org/)
-2. Go to your uploaded file page.
-3. From `DOWNLOAD OPTIONS` select `SHOW ALL`
-4. Right click at <yourmodelname>.pt and Copy link address.
-5. Edit config in [app.py](https://github.com/thepbordin/YOLOv5-Streamlit-Deployment/blob/main/app.py)
-
-	```python
-	cfg_enable_url_download = True
-	url = "your_model_url"
-	```
-
-### Use local .pt file:
-Edit config in [app.py](https://github.com/thepbordin/YOLOv5-Streamlit-Deployment/blob/main/app.py)
-```python
-## CFG
-cfg_model_path = "models/your_model_name.pt" 
+```
+# 本地安装的话，请将opencv-python-headless改为opencv-python
+pip install -r requirements.txt
 ```
 
-## Reference
-[Yolov5 Real-time Inference using Streamlit](https://github.com/moaaztaha/Yolo-Interface-using-Streamlit)
+如果有`GPU`的话，将`torch`替换成`gpu`版本可加速检测
+
+# 运行项目
+
+```
+streamlit run main.py
+```
+
+**图片检测**
+
+![streamlit yolov5 image detection](data/images/image.png)
+
+**视频检测**
+
+![streamlit yolov5 video detection](data/images/video.png)
